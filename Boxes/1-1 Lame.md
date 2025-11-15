@@ -1,8 +1,9 @@
 ---
 tags:
   - htb
-  - pentest
-  - machine
+  - metasploit
+  - smb
+  - ftp
 machine: Lame
 os: Linux
 difficulty: Easy

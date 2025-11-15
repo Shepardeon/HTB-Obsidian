@@ -1,8 +1,6 @@
 ---
 tags:
   - htb
-  - pentest
-  - machine
 machine:
 os:
 difficulty:
