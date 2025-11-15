@@ -25,7 +25,7 @@ status: terminé
 - **Difficulty :** Easy
 - **Auteur :** ch4p
 - **Date :** 15/11/2025
-- **Statut :** Terminé
+- **Statut :** Terminée
 
 ---
 ## 🟦 1. Reconnaissance réseau

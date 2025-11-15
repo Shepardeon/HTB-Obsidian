@@ -234,7 +234,7 @@ msf exploit(windows/smb/ms17_010_eternalblue) > exploit
 - Contexte :  meterpreter/shell
 
 ---
-## 🟦 7. Résumé final (à remplir en dernier)
+## 🟦 7. Résumé final
 
 > [!success] Ce que j’ai appris  
 -  Recherche de vulnérabilité avec nmap

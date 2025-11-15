@@ -121,7 +121,7 @@ nmap -sCV (-script vuln) -p<ports1,port2,...> <ip>
 
 ---
 
-## 🟦 7. Résumé final (à remplir en dernier)
+## 🟦 7. Résumé final
 
 > [!success] Ce que j’ai appris  
 -  
