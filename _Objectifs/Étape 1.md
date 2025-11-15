@@ -2,7 +2,7 @@
 - [x] [Lame](https://www.hackthebox.com/machines/lame) (Facile)
 - [x] [Blue](https://www.hackthebox.com/machines/blue) (Facile)
 - [x] [Jerry](https://www.hackthebox.com/machines/jerry) (Facile)
-- [ ] [Legacy](https://www.hackthebox.com/machines/legacy) (Facile)
+- [x] [Legacy](https://www.hackthebox.com/machines/legacy) (Facile)
 - [ ] [Bashed](https://www.hackthebox.com/machines/bashed) (Facile)
 - [ ] [Optimum](https://www.hackthebox.com/machines/optimum) (Facile)
 - [ ] [Sense](https://www.hackthebox.com/machines/sense) (Facile)

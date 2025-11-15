@@ -230,7 +230,7 @@ msf exploit(windows/smb/ms17_010_eternalblue) > exploit
 ![[Pasted image 20251115190036.png]]
 
 **Accès obtenu :**  
-- User :  nt authority\system
+- User :  administrator
 - Contexte :  meterpreter/shell
 
 ---

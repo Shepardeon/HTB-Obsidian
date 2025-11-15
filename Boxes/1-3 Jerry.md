@@ -134,7 +134,7 @@ Puis on ouvre l'url http://jerry.htb:8080/shell
 ![[Pasted image 20251115200513.png]]
 
 **Accès obtenu :**  
-- User :  nt authority\system
+- User :  administrator
 - Contexte :  shell
 
 ---
