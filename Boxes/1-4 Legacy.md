@@ -1,6 +1,9 @@
 ---
 tags:
   - htb
+  - smb
+  - cve
+  - metasploit
 machine: Legacy
 os: Windows
 difficulty: Easy

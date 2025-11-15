@@ -73,6 +73,7 @@ nmap -sCV (-script vuln) -p<ports1,port2,...> <ip>
 ---
 
 ## 🟦 3. Points d’entrée potentiels
+
 -  
 -  
 -  
