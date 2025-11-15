@@ -1,0 +1,58 @@
+# Obsidian files
+.obsidian/
+.obsidian-git-data
+
+# Unreleased content
+Unreleased/
+
+# Personal/sensitive files
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*password*
+*secret*
+*private*
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+*~
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# System files
+desktop.ini
+.directory
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archives containing potentially sensitive data
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.tar
+
+# Screenshots with potentially sensitive info
+screenshots/
+*screenshot*
+
+# Work in progress / draft content
+_drafts/
+_wip/
+_private/

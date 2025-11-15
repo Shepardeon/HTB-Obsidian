@@ -1,0 +1,11 @@
+## Boxes
+- [x] [Lame](https://www.hackthebox.com/machines/lame) (Facile)
+- [ ] [Blue](https://www.hackthebox.com/machines/blue) (Facile)
+- [ ] [Jerry](https://www.hackthebox.com/machines/jerry) (Facile)
+- [ ] [Legacy](https://www.hackthebox.com/machines/legacy) (Facile)
+- [ ] [Bashed](https://www.hackthebox.com/machines/bashed) (Facile)
+- [ ] [Optimum](https://www.hackthebox.com/machines/optimum) (Facile)
+- [ ] [Sense](https://www.hackthebox.com/machines/sense) (Facile)
+- [ ] [Shocker](https://www.hackthebox.com/machines/shocker) (Facile)
+- [ ] [Blocky](https://www.hackthebox.com/machines/blocky) (Facile)
+- [ ] [Beep](https://www.hackthebox.com/machines/beep) (Facile)
