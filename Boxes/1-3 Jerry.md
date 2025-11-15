@@ -1,6 +1,9 @@
 ---
 tags:
   - htb
+  - web
+  - tomcat
+  - msfvenom
 machine: Jerry
 os: Windows
 difficulty: Easy
