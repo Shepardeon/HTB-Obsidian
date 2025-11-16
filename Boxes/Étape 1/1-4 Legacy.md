@@ -7,7 +7,7 @@ tags:
 title: Legacy
 os: Windows
 difficulty: Easy
-date: 15/11/2025
+date: 2025-11-15
 status: terminé
 draft: "false"
 ---

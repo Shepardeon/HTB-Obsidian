@@ -8,7 +8,7 @@ tags:
 title: Bashed
 os: Linux
 difficulty: Easy
-date: 16/11/2025
+date: 2025-11-16
 status: terminé
 draft: "false"
 ---
