@@ -1,6 +1,10 @@
 ---
 tags:
   - htb
+  - web
+  - enum
+  - privesc
+  - misconfig
 machine: Bashed
 os: Linux
 difficulty: Easy
