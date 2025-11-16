@@ -5,11 +5,12 @@ tags:
   - enum
   - privesc
   - misconfig
-machine: Bashed
+title: Bashed
 os: Linux
 difficulty: Easy
 date: 16/11/2025
 status: terminé
+draft: "false"
 ---
 ---
 # Bashed

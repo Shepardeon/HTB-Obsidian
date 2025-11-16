@@ -1,11 +1,12 @@
 ---
 tags:
   - htb
-machine:
+title:
 os:
 difficulty:
 date:
 status: en-cours
+draft: "true"
 ---
 ---
 # {{title}}

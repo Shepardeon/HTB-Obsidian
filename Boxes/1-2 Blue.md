@@ -4,11 +4,12 @@ tags:
   - smb
   - metasploit
   - cve
-machine: Blue
+title: Blue
 os: Windows
 difficulty: Easy
 date: 15/11/2025
 status: terminé
+draft: "false"
 ---
 ---
 # Blue

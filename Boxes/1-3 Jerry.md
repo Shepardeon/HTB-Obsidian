@@ -4,11 +4,12 @@ tags:
   - web
   - tomcat
   - msfvenom
-machine: Jerry
+title: Jerry
 os: Windows
 difficulty: Easy
 date: 15/11/2025
 status: terminé
+draft: "false"
 ---
 ---
 # Jerry

@@ -4,11 +4,12 @@ tags:
   - metasploit
   - smb
   - ftp
-machine: Lame
+title: Lame
 os: Linux
 difficulty: Easy
 date: 15/11/2025
 status: terminé
+draft: "false"
 ---
 ---
 # Lame

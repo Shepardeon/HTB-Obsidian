@@ -4,11 +4,12 @@ tags:
   - smb
   - cve
   - metasploit
-machine: Legacy
+title: Legacy
 os: Windows
 difficulty: Easy
 date: 15/11/2025
 status: terminé
+draft: "false"
 ---
 ---
 # Legacy
