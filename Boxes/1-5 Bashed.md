@@ -158,6 +158,8 @@ Il y a donc 3 utilisateurs sur la machine : `root`, `arrexel` et `scriptmanager`
 
 On a accès au flag utilisateur dans `/home/arrexel`.
 
+### 5.1 Mouvement latéral
+
 L'utilisateur `www-data` peut exécuter des commandes en tant que `scriptmanager` sans mot de passe :
 ```bash
 sudo -u scriptmanager whoami
