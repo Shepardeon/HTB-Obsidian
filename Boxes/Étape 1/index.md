@@ -1,6 +1,6 @@
 ---
 title: Étape 1
-date: 16/11/2025
+date: 2025-11-16
 draft: "false"
 ---
 ## Objectifs
