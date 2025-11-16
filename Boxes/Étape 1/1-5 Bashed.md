@@ -83,7 +83,9 @@ Le site semble être un blog d'un développeur/pentesteur
 ![[Pasted image 20251116000413.png]]
 
 Dans le menu on note la mention "Colorlib" :
+
 ![[Pasted image 20251116000731.png]]
+
 Peut-être une techno Wordpress sous-jacente.
 
 Le blog contient des informations à propos d'un outils nommé "phpbash" qui permet d'utiliser un reverse shell PHP depuis un navigateur quand le port SSH est inaccessible.
